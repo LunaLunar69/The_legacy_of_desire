@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccb7kov1fub3n"
+path="res://.godot/imported/Skrillex & Damian Jr. Gong Marley - Make It Bun Dem [OFFICIAL VIDEO].mp3-4b2f80fb847c99b480ef17360cd0925a.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Skrillex & Damian Jr. Gong Marley - Make It Bun Dem [OFFICIAL VIDEO].mp3"
+dest_files=["res://.godot/imported/Skrillex & Damian Jr. Gong Marley - Make It Bun Dem [OFFICIAL VIDEO].mp3-4b2f80fb847c99b480ef17360cd0925a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

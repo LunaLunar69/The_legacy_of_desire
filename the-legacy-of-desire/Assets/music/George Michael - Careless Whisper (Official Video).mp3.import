@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bohtbe6wahj15"
+path="res://.godot/imported/George Michael - Careless Whisper (Official Video).mp3-e2a360edf7adfc957dce142d7330a482.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/George Michael - Careless Whisper (Official Video).mp3"
+dest_files=["res://.godot/imported/George Michael - Careless Whisper (Official Video).mp3-e2a360edf7adfc957dce142d7330a482.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
