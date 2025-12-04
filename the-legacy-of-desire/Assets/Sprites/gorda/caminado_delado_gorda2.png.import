@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4awfyd4p7bou"
-path="res://.godot/imported/3.png-736794d1a0e75b751658124e67ba7112.ctex"
+uid="uid://db7l31oklwka1"
+path="res://.godot/imported/caminado_delado_gorda2.png-67eb84375609c103960efc60fb21bf78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/chadWalkingFront/3.png"
-dest_files=["res://.godot/imported/3.png-736794d1a0e75b751658124e67ba7112.ctex"]
+source_file="res://Assets/Sprites/gorda/caminado_delado_gorda2.png"
+dest_files=["res://.godot/imported/caminado_delado_gorda2.png-67eb84375609c103960efc60fb21bf78.ctex"]
 
 [params]
 

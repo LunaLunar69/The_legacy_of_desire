@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4awfyd4p7bou"
-path="res://.godot/imported/3.png-736794d1a0e75b751658124e67ba7112.ctex"
+uid="uid://dn7prca1oksx5"
+path="res://.godot/imported/camina_abajo_gorda2.png-2ad72fb67c08d60801ee1514f03c8c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/chadWalkingFront/3.png"
-dest_files=["res://.godot/imported/3.png-736794d1a0e75b751658124e67ba7112.ctex"]
+source_file="res://Assets/Sprites/gorda/camina_abajo_gorda2.png"
+dest_files=["res://.godot/imported/camina_abajo_gorda2.png-2ad72fb67c08d60801ee1514f03c8c93.ctex"]
 
 [params]
 
