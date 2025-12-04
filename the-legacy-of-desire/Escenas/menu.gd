@@ -16,3 +16,5 @@ func _on_cp_btn_pressed() -> void:
 
 func _on_exit_btn_pressed() -> void:
 	get_tree().quit() #salir
+
+#lol
