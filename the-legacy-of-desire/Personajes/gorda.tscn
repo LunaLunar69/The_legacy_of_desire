@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwdnqgw8ynonf"]
+
+[ext_resource type="Script" uid="uid://c4goa88tgvi1f" path="res://Personajes/gorda.gd" id="1_owt0l"]
+[ext_resource type="Texture2D" uid="uid://dn7prca1oksx5" path="res://Assets/Sprites/gorda/camina_abajo_gorda2.png" id="2_ku5i2"]
+[ext_resource type="Texture2D" uid="uid://btch85gvjpr67" path="res://Assets/Sprites/gorda/camina_abajo_gorda.png" id="3_yo7v2"]
+[ext_resource type="Texture2D" uid="uid://db7l31oklwka1" path="res://Assets/Sprites/gorda/caminado_delado_gorda2.png" id="4_5t4k5"]
+[ext_resource type="Texture2D" uid="uid://csdyfrfto6mmn" path="res://Assets/Sprites/gorda/delado_gorda.png" id="5_y8r3q"]
+[ext_resource type="Texture2D" uid="uid://ccu2jdw2qakll" path="res://Assets/Sprites/gorda/camina_delado_gorda1.png" id="6_bgdc6"]
+[ext_resource type="Texture2D" uid="uid://8tdqv5mn775b" path="res://Assets/Sprites/gorda/camina_arriba_gorda2.png" id="7_0kubb"]
+[ext_resource type="Texture2D" uid="uid://dcis5g2ogdrio" path="res://Assets/Sprites/gorda/camina_arriba_gorda.png" id="8_w2txn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6t04m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ku5i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yo7v2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5t4k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y8r3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bgdc6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0kubb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w2txn")
+}],
+"loop": true,
+"name": &"up",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xytnd"]
+size = Vector2(148, 152)
+
+[node name="gorda" type="CharacterBody2D"]
+script = ExtResource("1_owt0l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.594, 0.594)
+sprite_frames = SubResource("SpriteFrames_6t04m")
+animation = &"left"
+frame_progress = 0.392766
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_xytnd")
