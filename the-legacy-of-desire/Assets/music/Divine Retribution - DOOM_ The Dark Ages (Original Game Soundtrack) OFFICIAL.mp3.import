@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8a06jlwhsvuu"
+path="res://.godot/imported/Divine Retribution - DOOM_ The Dark Ages (Original Game Soundtrack) OFFICIAL.mp3-53f179afbb191aacfaec1501df275d88.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Divine Retribution - DOOM_ The Dark Ages (Original Game Soundtrack) OFFICIAL.mp3"
+dest_files=["res://.godot/imported/Divine Retribution - DOOM_ The Dark Ages (Original Game Soundtrack) OFFICIAL.mp3-53f179afbb191aacfaec1501df275d88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
