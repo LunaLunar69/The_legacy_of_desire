@@ -1162,13 +1162,13 @@ sources/0 = SubResource("TileSetAtlasSource_bd328")
 size = Vector2(30.77178, 619.68365)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkf61"]
-size = Vector2(873.15314, 7.28341)
+size = Vector2(1742.5242, 4.6063156)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj3o6"]
-size = Vector2(42.64325, 92.832565)
+size = Vector2(42.64325, 94.28909)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x62jk"]
-size = Vector2(825.7427, 5.433159)
+size = Vector2(1697.782, 4.921194)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u800c"]
 size = Vector2(34.19787, 3.2677307)
@@ -1265,27 +1265,24 @@ tile_map_data = PackedByteArray("AADH/wcAAAAGADwAAADH/wgAAAAGAD0AAADH/wkAAAAGAD4
 tile_set = SubResource("TileSet_m36y2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(22.539328, 52.4237)
 rotation = 3.1415927
 scale = Vector2(1.3639048, -0.1606575)
 shape = SubResource("RectangleShape2D_af8n3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(481.65494, 6.2793016)
-scale = Vector2(0.9999997, 0.99999964)
+position = Vector2(916.34, 4.940752)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_tkf61")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1767.3945, 55.589138)
-scale = Vector2(0.9999998, 0.99999976)
+position = Vector2(1767.3943, 54.86086)
+scale = Vector2(0.9999997, 0.99999964)
 shape = SubResource("RectangleShape2D_nj3o6")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(460.72205, 99.99744)
-scale = Vector2(0.9999997, 0.99999964)
+position = Vector2(896.741, 100.253365)
+scale = Vector2(0.99999946, 0.99999934)
 shape = SubResource("RectangleShape2D_x62jk")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
