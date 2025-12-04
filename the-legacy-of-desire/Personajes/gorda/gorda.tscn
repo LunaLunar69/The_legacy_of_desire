@@ -1,16 +1,45 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwdnqgw8ynonf"]
+[gd_scene load_steps=17 format=3 uid="uid://cwdnqgw8ynonf"]
 
-[ext_resource type="Script" uid="uid://c4goa88tgvi1f" path="res://Personajes/gorda.gd" id="1_owt0l"]
+[ext_resource type="Script" uid="uid://c4goa88tgvi1f" path="res://Personajes/gorda/gorda.gd" id="1_owt0l"]
 [ext_resource type="Texture2D" uid="uid://dn7prca1oksx5" path="res://Assets/Sprites/gorda/camina_abajo_gorda2.png" id="2_ku5i2"]
+[ext_resource type="Texture2D" uid="uid://vsxppk3lckfu" path="res://Assets/Sprites/gordaDeath/1.png" id="2_phnun"]
+[ext_resource type="Texture2D" uid="uid://bhoptxlqslme8" path="res://Assets/Sprites/gordaDeath/2.png" id="3_0f088"]
 [ext_resource type="Texture2D" uid="uid://btch85gvjpr67" path="res://Assets/Sprites/gorda/camina_abajo_gorda.png" id="3_yo7v2"]
 [ext_resource type="Texture2D" uid="uid://db7l31oklwka1" path="res://Assets/Sprites/gorda/caminado_delado_gorda2.png" id="4_5t4k5"]
+[ext_resource type="Texture2D" uid="uid://5vof5cnrqm05" path="res://Assets/Sprites/gordaDeath/3.png" id="4_sv7lj"]
+[ext_resource type="Texture2D" uid="uid://cggqybu0i0elq" path="res://Assets/Sprites/gordaDeath/4.png" id="5_3e7k5"]
 [ext_resource type="Texture2D" uid="uid://csdyfrfto6mmn" path="res://Assets/Sprites/gorda/delado_gorda.png" id="5_y8r3q"]
 [ext_resource type="Texture2D" uid="uid://ccu2jdw2qakll" path="res://Assets/Sprites/gorda/camina_delado_gorda1.png" id="6_bgdc6"]
+[ext_resource type="Texture2D" uid="uid://d1eb5dj2aptcv" path="res://Assets/Sprites/gordaDeath/5.png" id="6_f28w3"]
 [ext_resource type="Texture2D" uid="uid://8tdqv5mn775b" path="res://Assets/Sprites/gorda/camina_arriba_gorda2.png" id="7_0kubb"]
+[ext_resource type="Texture2D" uid="uid://cgs41lhp7uvwd" path="res://Assets/Sprites/gordaDeath/6.png" id="7_nuetr"]
 [ext_resource type="Texture2D" uid="uid://dcis5g2ogdrio" path="res://Assets/Sprites/gorda/camina_arriba_gorda.png" id="8_w2txn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6t04m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_phnun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0f088")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sv7lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3e7k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f28w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nuetr")
+}],
+"loop": true,
+"name": &"death",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ku5i2")
@@ -49,17 +78,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xytnd"]
-size = Vector2(148, 152)
+size = Vector2(84, 138)
 
-[node name="gorda" type="CharacterBody2D"]
+[node name="gorda" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_owt0l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.594, 0.594)
+position = Vector2(-6.515999, -1.0159978)
+scale = Vector2(0.54309374, 0.5860625)
 sprite_frames = SubResource("SpriteFrames_6t04m")
-animation = &"left"
-frame_progress = 0.392766
+animation = &"death"
+frame_progress = 0.38112235
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0)
+position = Vector2(-4, 3)
 shape = SubResource("RectangleShape2D_xytnd")
