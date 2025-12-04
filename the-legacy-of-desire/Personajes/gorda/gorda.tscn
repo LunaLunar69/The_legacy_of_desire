@@ -80,7 +80,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xytnd"]
 size = Vector2(84, 138)
 
-[node name="gorda" type="CharacterBody2D"]
+[node name="gorda" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_owt0l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -88,7 +88,7 @@ position = Vector2(-6.515999, -1.0159978)
 scale = Vector2(0.54309374, 0.5860625)
 sprite_frames = SubResource("SpriteFrames_6t04m")
 animation = &"death"
-frame_progress = 0.59240645
+frame_progress = 0.38112235
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 3)
