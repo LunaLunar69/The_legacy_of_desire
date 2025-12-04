@@ -69,7 +69,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print(\"¡Slime tocó a Chad! Cambiando a la escena de menú.\")
 		
 		# ⚠️ CAMBIO DE ESCENA: Manda el juego a la escena del menú
-		var menu_scene_path = \"res://menu.tscn\" 
+		var menu_scene_path = \"res://Escenas/MuertePantalla.tscn\" 
 		
 		# Asegúrate de que esta ruta (res://menu.tscn) sea la correcta para tu menú.
 		if FileAccess.file_exists(menu_scene_path):
@@ -106,7 +106,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lu0p5"]
-radius = 15.132746
+radius = 17.0
 
 [node name="Slime" type="Area2D"]
 script = SubResource("GDScript_lakq5")

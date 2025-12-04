@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b6l7bs0bq4l5s"]
+[gd_scene load_steps=20 format=4 uid="uid://b6l7bs0bq4l5s"]
 
 [ext_resource type="TileSet" uid="uid://cme6uxk0qa87i" path="res://Assets/tile_sets/heheheha.tres" id="1_kvvse"]
 [ext_resource type="TileSet" uid="uid://cdwn4j48w4x21" path="res://Assets/tile_sets/heheheha2.tres" id="2_py8t1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4muvrmhifdb6" path="res://Assets/tile_maps/magecity.png" id="3_qiwrm"]
 [ext_resource type="Script" uid="uid://2tdohheguv6v" path="res://Escenas/portal.gd" id="4_m2r3o"]
 [ext_resource type="PackedScene" uid="uid://bw0atc0j3jsdm" path="res://Personajes/chad/chad.tscn" id="5_gnbc8"]
+[ext_resource type="PackedScene" uid="uid://cf0rb1074lets" path="res://Personajes/slime/slime.tscn" id="7_csygi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bd328"]
 texture = ExtResource("3_qiwrm")
@@ -1292,3 +1293,7 @@ parameters/looping = true
 [node name="Chad" parent="." instance=ExtResource("5_gnbc8")]
 position = Vector2(719.7041, 71.49424)
 scale = Vector2(1, 0.15)
+
+[node name="Slime" parent="." instance=ExtResource("7_csygi")]
+position = Vector2(1542.0011, 76.53348)
+scale = Vector2(1, 0.1)

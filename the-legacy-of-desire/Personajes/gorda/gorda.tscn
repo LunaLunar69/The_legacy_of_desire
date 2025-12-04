@@ -36,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_nuetr")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 6.0
 }, {
@@ -88,7 +88,8 @@ position = Vector2(-6.515999, -1.0159978)
 scale = Vector2(0.54309374, 0.5860625)
 sprite_frames = SubResource("SpriteFrames_6t04m")
 animation = &"death"
-frame_progress = 0.38112235
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 3)

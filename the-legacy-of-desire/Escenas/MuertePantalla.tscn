@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://wvf0nnqjies0"]
+
+[ext_resource type="Script" uid="uid://dneg2det4etr4" path="res://Escenas/menu.gd" id="1_dqpqy"]
+[ext_resource type="Texture2D" uid="uid://bspta8bawyk4h" path="res://Assets/Sprites/deathScreen.jpeg" id="2_k8jmo"]
+[ext_resource type="AudioStream" uid="uid://drwhp0133hyu1" path="res://Assets/music/Never Gonna Give You Up (2022 - Remaster).mp3" id="3_8iijm"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dqpqy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("2_k8jmo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 294.0
+offset_right = 927.74
+offset_bottom = 395.0
+scale = Vector2(2.70151, 2.6446)
+
+[node name="NP_BTN" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nivel 1"
+flat = true
+
+[node name="CP_BTN" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nivel 2"
+flat = true
+
+[node name="EXIT_BTN" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salir del juego"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8iijm")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="VBoxContainer/NP_BTN" to="." method="_on_np_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/CP_BTN" to="." method="_on_cp_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/EXIT_BTN" to="." method="_on_exit_btn_pressed"]

@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var camera_shake_amount: float = 6.0
 
 # --- PROPIEDADES DE JUEGO ---
-const WIN_SCENE_PATH = "res://scenes/Win.tscn" # <--- ¡AJUSTA ESTA RUTA!
+const WIN_SCENE_PATH = "res://Escenas/PantallaGanar.tscn" # <--- ¡AJUSTA ESTA RUTA!
 
 # --- VARIABLES DE ESTADO Y NODOS ---
 var is_dead: bool = false
@@ -75,13 +75,14 @@ func _on_death_animation_finished() -> void:
 	# Solo cambiamos de escena si la animación que terminó es la de muerte
 	if anim.animation == "death":
 		# Cambiar a la escena "Win"
+		print("Ganar")
 		var error = get_tree().change_scene_to_file(WIN_SCENE_PATH)
 		
 		if error != OK:
 			print("ERROR: No se pudo cargar la escena de victoria. Revisa la ruta: ", WIN_SCENE_PATH)
 
 # --- FUNCIONES DE UTILIDAD ---
-
+ 
 func update_animation(dir: Vector2):
 	if dir == Vector2.ZERO:
 		anim.play("left") # Animación IDLE (asumo "left" es el idle frontal)
