@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cismqlpob6of3"
-path="res://.godot/imported/idle_gorda.png-3da4a1fa5a2ff6bf20aabdf63b1cc3e8.ctex"
+uid="uid://vsxppk3lckfu"
+path="res://.godot/imported/1.png-7515bb3c43c1e73cb2bd73209a529d61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/gorda/idle_gorda.png"
-dest_files=["res://.godot/imported/idle_gorda.png-3da4a1fa5a2ff6bf20aabdf63b1cc3e8.ctex"]
+source_file="res://Assets/Sprites/gordaDeath/1.png"
+dest_files=["res://.godot/imported/1.png-7515bb3c43c1e73cb2bd73209a529d61.ctex"]
 
 [params]
 
