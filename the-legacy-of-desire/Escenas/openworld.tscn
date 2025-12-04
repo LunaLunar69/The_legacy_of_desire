@@ -46,6 +46,11 @@ size = Vector2(57.514107, 8.503716)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a61xq"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_vmumc")
@@ -69,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkback",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -80,7 +85,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkfront",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,7 +96,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkside",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [node name="Openworld" type="Node2D"]
@@ -205,5 +210,4 @@ position = Vector2(340.4216, 19.212116)
 position = Vector2(587.57697, 31.18031)
 scale = Vector2(0.66289747, 0.07037869)
 sprite_frames = SubResource("SpriteFrames_a61xq")
-animation = &"walkback"
-frame_progress = 0.43850628
+animation = &"attack"
