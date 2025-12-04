@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct3eg6vguxb4h"]
+[gd_scene load_steps=5 format=3 uid="uid://ct3eg6vguxb4h"]
 
 [ext_resource type="Script" uid="uid://dneg2det4etr4" path="res://Escenas/menu.gd" id="1_058vb"]
 [ext_resource type="Texture2D" uid="uid://cnbp61e5x0snv" path="res://Assets/Sprites/ganarPantalla.jpg" id="2_058vb"]
-[ext_resource type="AudioStream" uid="uid://drwhp0133hyu1" path="res://Assets/music/Never Gonna Give You Up (2022 - Remaster).mp3" id="3_3lvxi"]
+[ext_resource type="AudioStream" uid="uid://7sprlau0wnya" path="res://Assets/music/victory-royale-made-with-voicemod-technology-made-with-Voicemod.mp3" id="3_3lvxi"]
+[ext_resource type="Texture2D" uid="uid://cjosg0mgri4gu" path="res://Assets/Sprites/vicotori royal.jpg" id="3_a4jqn"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,12 +37,15 @@ scale = Vector2(2.70151, 2.6446)
 
 [node name="NP_BTN" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Nivel 1"
+text = "Reiniciar
+"
 flat = true
 
 [node name="CP_BTN" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
-text = "Nivel 2"
+text = "Reiniciar
+"
 flat = true
 
 [node name="EXIT_BTN" type="Button" parent="VBoxContainer"]
@@ -53,6 +57,11 @@ flat = true
 stream = ExtResource("3_3lvxi")
 autoplay = true
 parameters/looping = true
+
+[node name="VicotoriRoyal" type="Sprite2D" parent="."]
+position = Vector2(557, 149.00002)
+scale = Vector2(1.6478424, 0.7285501)
+texture = ExtResource("3_a4jqn")
 
 [connection signal="pressed" from="VBoxContainer/NP_BTN" to="." method="_on_np_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/CP_BTN" to="." method="_on_cp_btn_pressed"]

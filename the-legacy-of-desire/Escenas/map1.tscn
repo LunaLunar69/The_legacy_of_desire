@@ -2348,3 +2348,9 @@ position = Vector2(506, 254)
 
 [node name="gorda" parent="." instance=ExtResource("5_kpa61")]
 position = Vector2(130, 178)
+
+[node name="Slime2" parent="." instance=ExtResource("4_sf1h3")]
+position = Vector2(787, 536)
+
+[node name="Slime3" parent="." instance=ExtResource("4_sf1h3")]
+position = Vector2(69, 478)

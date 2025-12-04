@@ -34,12 +34,13 @@ scale = Vector2(2.70151, 2.6446)
 
 [node name="NP_BTN" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Nivel 1"
+text = "Reiniciar"
 flat = true
 
 [node name="CP_BTN" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
-text = "Nivel 2"
+text = "Reiniciar"
 flat = true
 
 [node name="EXIT_BTN" type="Button" parent="VBoxContainer"]

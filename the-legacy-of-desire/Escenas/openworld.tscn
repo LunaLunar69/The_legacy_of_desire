@@ -1297,3 +1297,6 @@ scale = Vector2(1, 0.15)
 [node name="Slime" parent="." instance=ExtResource("7_csygi")]
 position = Vector2(1542.0011, 76.53348)
 scale = Vector2(1, 0.1)
+
+[node name="Slime2" parent="." instance=ExtResource("7_csygi")]
+position = Vector2(1035.2548, 44.25084)

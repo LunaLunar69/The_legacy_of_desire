@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf0rb1074lets"]
+[gd_scene load_steps=11 format=3 uid="uid://cf0rb1074lets"]
 
 [ext_resource type="Texture2D" uid="uid://g4pu3y63re3k" path="res://Assets/Sprites/slime/slime1.png" id="2_kbuvr"]
 [ext_resource type="Texture2D" uid="uid://c0od7sqbvr3ms" path="res://Assets/Sprites/slime/slime2.png" id="3_lu0p5"]
@@ -8,75 +8,75 @@
 [ext_resource type="Texture2D" uid="uid://c401q5gifcwq" path="res://Assets/Sprites/slime/slime6.png" id="7_h853j"]
 
 [sub_resource type="GDScript" id="GDScript_lakq5"]
-script/source = "extends Area2D
+script/source = "extends CharacterBody2D 
 
 # --- Variables de Configuración ---
-@export var move_speed: float = 100.0 # Velocidad del Slime
-@export var movement_time: float = 2.0 # Tiempo en segundos que se moverá en una dirección
+@export var move_speed: float = 100.0 
+@export var movement_time: float = 2.0 
 
 # --- Nodos ---
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var detection_area: Area2D = $DetectionArea # <--- ¡NUEVA LÍNEA! Nodo Area2D para detectar a Chad
 
 # Variable para guardar la dirección actual de movimiento
 var current_direction: Vector2 = Vector2.ZERO
+const MUERTE_SCENE_PATH = \"res://Escenas/MuertePantalla.tscn\" # <--- ¡Tu ruta!
 
 func _ready() -> void:
-	# 1. Conexión de señales (¡Es crucial!)
-	
-	# Conecta la señal 'body_entered' a la función _on_body_entered.
-	# 'body_entered' se dispara cuando un Body (como tu CharacterBody2D de Chad) entra al área.
-	body_entered.connect(_on_body_entered)
-	
-	# Conecta la señal 'timeout' del Timer a la función _on_timer_timeout.
+	# Conexión de señales del Timer
 	timer.timeout.connect(_on_timer_timeout)
 	
-	# 2. Configuración inicial del Timer y movimiento
+	# Conexión de la señal de detección de Chad
+	# El Area2D hijo detecta cuando un CharacterBody2D (Chad) entra en él.
+	if not detection_area.body_entered.is_connected(_on_body_entered):
+		detection_area.body_entered.connect(_on_body_entered)
+	
+	# Configuración inicial
 	timer.wait_time = movement_time
-	timer.start() # Empieza el temporizador
-	_set_random_direction() # Empieza a moverse inmediatamente
+	timer.start()
+	_set_random_direction()
 
-# --- Lógica de Movimiento ---
+# --- Lógica de Movimiento y Colisión de MUNDO ---
 
 func _physics_process(delta: float) -> void:
-	# Movemos el Slime. Usamos 'position' porque es un Area2D.
-	position += current_direction * move_speed * delta
+	velocity = current_direction * move_speed 
+	
+	# move_and_slide() mueve al Slime y detecta colisiones de mundo
+	var was_colliding: bool = move_and_slide() 
+	
+	# Si chocó contra una pared, cambiamos de dirección
+	if was_colliding:
+		_set_random_direction()
 
 func _set_random_direction() -> void:
-	# Genera un nuevo vector de dirección aleatorio y lo normaliza
+	# Genera un nuevo vector de dirección aleatorio
 	var new_direction = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
 	current_direction = new_direction
 	
-	# Opcional: Aquí puedes poner la lógica de animación para que se vea que camina
 	if current_direction != Vector2.ZERO:
 		animated_sprite.play(\"default\")
 	else:
 		animated_sprite.play(\"default\")
 
 
-# --- Detección y Consecuencias ---
+# --- Detección de Colisión con Chad y Consecuencias ---
 
 # Función llamada cuando el Timer se agota
 func _on_timer_timeout() -> void:
-	# Cuando el tiempo se acaba, cambiamos de dirección y reiniciamos el Timer
 	_set_random_direction()
 	timer.start()
 
-# Función que se llama cuando Chad toca al Slime
+# Función que se llama cuando Chad toca el Area2D hijo
 func _on_body_entered(body: Node2D) -> void:
-	# Verificamos si el objeto que entró es un 'CharacterBody2D' (que es el tipo de Chad)
-	if body is CharacterBody2D:
-		print(\"¡Slime tocó a Chad! Cambiando a la escena de menú.\")
+	# Verificamos si el objeto que entró es Chad (un CharacterBody2D)
+	if body is CharacterBody2D and body.name == \"Chad\": # O puedes usar is_in_group(\"player\")
+		print(\"¡Slime tocó a Chad! Cambiando a la escena de Muerte.\")
 		
-		# ⚠️ CAMBIO DE ESCENA: Manda el juego a la escena del menú
-		var menu_scene_path = \"res://Escenas/MuertePantalla.tscn\" 
-		
-		# Asegúrate de que esta ruta (res://menu.tscn) sea la correcta para tu menú.
-		if FileAccess.file_exists(menu_scene_path):
-			get_tree().change_scene_to_file(menu_scene_path)
+		if FileAccess.file_exists(MUERTE_SCENE_PATH):
+			get_tree().change_scene_to_file(MUERTE_SCENE_PATH)
 		else:
-			# Si Godot no encuentra la ruta, imprime un error.
-			print(\"ERROR: No se encontró el archivo de escena del menú en la ruta: \" + menu_scene_path)
+			print(\"ERROR: No se encontró la pantalla de Muerte en la ruta: \" + MUERTE_SCENE_PATH)
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lakq5"]
@@ -108,7 +108,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lu0p5"]
 radius = 17.0
 
-[node name="Slime" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lakq5"]
+radius = 21.023796
+
+[node name="Slime" type="CharacterBody2D"]
 script = SubResource("GDScript_lakq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -119,3 +122,12 @@ position = Vector2(1, 4)
 shape = SubResource("CircleShape2D_lu0p5")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_lakq5")
+debug_color = Color(0.96539587, 0, 0.48987812, 0.41960785)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_body_entered"]
