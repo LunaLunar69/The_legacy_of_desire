@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # --- Variables Exportadas y Constantes ---
-@export var SPEED: float = 200.0 # Velocidad configurable desde el Inspector
+@export var SPEED: float = 250.0 # Velocidad configurable desde el Inspector
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Define los nombres de las animaciones que tienes en tu SpriteFrames:
